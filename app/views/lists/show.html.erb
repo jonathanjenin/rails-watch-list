@@ -1,7 +1,10 @@
 <div class='container'>
   <div style="display: flex; justify-content: space-between">
     <h1><%= @list.name %></h1>
-    <%= link_to 'Create a new bookmark', new_bookmark_path, class:"btn btn-gradient" %>
+    <div>
+      <%= link_to 'Back', lists_path, class:"btn btn-gradient" %>
+      <%= link_to 'Create a new bookmark', new_bookmark_path, class:"btn btn-gradient" %>
+    </div>
   </div>
 
   <h6>There are <%= @filtered_bookmarks.count %> movie(s) attached to this list:</h6>
@@ -17,7 +20,4 @@
       </div>
     </div>
   <% end %>
-
-  <br>
-  <p><%= link_to 'back', lists_path %></p>
 </div>
