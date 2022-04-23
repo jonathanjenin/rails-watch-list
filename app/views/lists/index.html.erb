@@ -1,6 +1,8 @@
 <div class='container'>
-  <h1>My lists</h1>
-
+  <div style="display: flex; justify-content: space-between">
+    <h1>My lists</h1>
+    <%= link_to 'Create a new list', new_list_path, class:"btn btn-gradient" %>
+  </div>
     <% @lists.each do |l| %>
       <div class="card-category"
       style="background-image: linear-gradient(rgba(0,0,0,0.3),
@@ -8,7 +10,4 @@
         <%= link_to l.name, list_path(l) %>
       </div>
     <% end %>
-
-  <br>
-  <%= link_to 'Create a new list', new_list_path %>
 </div>

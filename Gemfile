@@ -21,10 +21,16 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Styling gems
 gem "autoprefixer-rails", "10.2.5"
 gem "font-awesome-sass", "~> 5.15"
 gem "simple_form", github: "heartcombo/simple_form"
+# Faker for seeding
 gem 'faker'
+# Security gem
+gem 'dotenv-rails', groups: [:development, :test]
+# Cloudinary
+gem 'cloudinary', '~> 1.16.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

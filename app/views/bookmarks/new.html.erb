@@ -1,8 +1,12 @@
-<h1>Add new bookmark</h1>
-
-<%= simple_form_for(@bookmark) do |f| %>
-<%= f.association :movie, placeholder: 'select a movie' %>
-<%= f.association :list, placeholder: 'select a list' %>
-<%= f.input :comment, placeholder: 'type a comment' %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <div style="display: flex; justify-content: space-between">
+    <h1>Add new bookmark</h1>
+    <%= link_to 'Back', bookmarks_path, class:"btn btn-gradient" %>
+  </div>
+  <%= simple_form_for(@bookmark) do |f| %>
+  <%= f.association :movie, placeholder: 'select a movie' %>
+  <%= f.association :list, placeholder: 'select a list' %>
+  <%= f.input :comment, placeholder: 'type a comment' %>
+  <%= f.submit %>
+  <% end %>
+</div>
