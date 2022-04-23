@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div style="display: flex; align-items: center">
         <p style="padding-top: 12px"><strong>Powered by</strong></p>
-        <a class="navbar-brand" href="#" style="margin-left: 10px">
+        <a class="navbar-brand" href=<%= lists_path %> style="margin-left: 10px">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,13 @@
         </div>
       </div>
     </div>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?theatre);">
+    <% if @list %>
+      <% cloudinary = "https://res.cloudinary.com/jonathanjenin/image/upload/v1650740101/development/" %>
+      <% @list.photo.key.nil? ? link = "https://source.unsplash.com/random/?" + @list.name.gsub(" ", "+") : link = cloudinary + @list.photo.key %>
+    <% else %>
+      <% link = "https://source.unsplash.com/random/?theatre" %>
+    <% end %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= link %>);">
       <div class="container">
         <h1>Save your next binge worthy movies!</h1>
       </div>

@@ -1,6 +1,9 @@
 <div class='container'>
+  <div style="display: flex; justify-content: space-between">
+    <h1><%= @list.name %></h1>
+    <%= link_to 'Create a new bookmark', new_bookmark_path, class:"btn btn-gradient" %>
+  </div>
 
-  <h1><%= @list.name %></h1>
   <h6>There are <%= @filtered_bookmarks.count %> movie(s) attached to this list:</h6>
   <% @filtered_bookmarks.each do |f| %>
     <div class="card-product">

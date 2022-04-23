@@ -4,9 +4,13 @@
     <%= link_to 'Create a new list', new_list_path, class:"btn btn-gradient" %>
   </div>
     <% @lists.each do |l| %>
+      <% if l.photo.attached? %>
+        <% link = "https://res.cloudinary.com/jonathanjenin/image/upload/v1650740101/development/" + l.photo.key %>
+      <% else %>
+        <% link = "https://source.unsplash.com/random/?" + l.name.gsub(" ", "+") %>
+      <% end %>
       <div class="card-category"
-      style="background-image: linear-gradient(rgba(0,0,0,0.3),
-      rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%= l.name.gsub(" ", "+") %>)">
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= link %>)">
         <%= link_to l.name, list_path(l) %>
       </div>
     <% end %>

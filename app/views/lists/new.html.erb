@@ -5,6 +5,7 @@
   </div>
   <%= simple_form_for(@list) do |f| %>
   <%= f.input :name, placeholder: 'list name' %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
   <% end %>
 </div>
