@@ -31,21 +31,20 @@ puts '---------------------'
   puts "Created list for #{list.name}"
 end
 
-puts '---------------------'
-
-movie_ids = Movie.pluck(:id)
-list_ids = List.pluck(:id)
-index = 0
-
-20.times do
-  bookmark = Bookmark.create!(
-    comment: Faker::Restaurant.review,
-    movie_id: movie_ids[index],
-    list_id: list_ids[rand(1..5)]
-  )
-  index += 1
-  puts "Created bookmark placing #{bookmark.movie.title} into #{bookmark.list.name}"
-end
+# Not seeding bookrmarks to avoid crashing due to same title/list
+# puts '---------------------'
+# movie_ids = Movie.pluck(:id)
+# list_ids = List.pluck(:id)
+# index = 0
+# 20.times do
+#   bookmark = Bookmark.create!(
+#     comment: Faker::Restaurant.review,
+#     movie_id: movie_ids[index],
+#     list_id: list_ids[rand(1..5)]
+#   )
+#   index += 1
+#   puts "Created bookmark placing #{bookmark.movie.title} into #{bookmark.list.name}"
+# end
 
 puts '---------------------'
 
