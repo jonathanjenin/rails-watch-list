@@ -1,0 +1,14 @@
+<div class='container'>
+  <h1>My lists</h1>
+
+    <% @lists.each do |l| %>
+      <div class="card-category"
+      style="background-image: linear-gradient(rgba(0,0,0,0.3),
+      rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%= l.name.gsub(" ", "+") %>)">
+        <%= link_to l.name, list_path(l) %>
+      </div>
+    <% end %>
+
+  <br>
+  <%= link_to 'Create a new list', new_list_path %>
+</div>

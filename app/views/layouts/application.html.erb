@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsWatchList</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="container-fluid">
+        <div style="display: flex; align-items: center">
+        <p style="padding-top: 12px"><strong>Powered by</strong></p>
+        <a class="navbar-brand" href="#" style="margin-left: 10px">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto">
+              <li class="nav-item active">
+                <%= link_to "My lists", lists_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "My bookmarks", bookmarks_path, class: "nav-link" %>
+              </li>
+              <!--li class="nav-item"-->
+              <!--/li-->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?theatre);">
+      <div class="container">
+        <h1>Save your next binge worthy movies!</h1>
+      </div>
+    </div>
+    <%= yield %>
+  </body>
+</html>

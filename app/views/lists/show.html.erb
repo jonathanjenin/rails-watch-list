@@ -1,0 +1,20 @@
+<div class='container'>
+
+  <h1><%= @list.name %></h1>
+  <h6>There are <%= @filtered_bookmarks.count %> movie(s) attached to this list:</h6>
+  <% @filtered_bookmarks.each do |f| %>
+    <div class="card-product">
+      <img src="https://source.unsplash.com/random/?<%= f.movie.title.gsub(" ", "+") %>" />
+      <div class="card-product-infos">
+        <h2><%= f.movie.title %> <%= link_to '🗑️',
+                                  bookmark_path(f),
+                                  method: :delete,
+                                  data: {confirm: 'Are you sure?'} %></h2>
+        <p><%= f.movie.overview %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <br>
+  <p><%= link_to 'back', lists_path %></p>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+<h1>My bookmarks</h1>
+
+<% @bookmarks.each do |b| %>
+  <div class="card-product">
+      <img src="https://source.unsplash.com/random/?<%= b.movie.title %>" />
+      <div class="card-product-infos">
+        <h2><%= b.movie.title %> (<%= b.list.name %>)</h2>
+        <p><%= b.comment %></p>
+      </div>
+    </div>
+<% end %>
+
+<br>
+<%= link_to 'Create a new bookmark', new_bookmark_path %>
+</div>
