@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <% if @list %>
+    <% if @list && @list.name != nil %>
       <% cloudinary = "https://res.cloudinary.com/jonathanjenin/image/upload/v1650740101/development/" %>
       <% @list.photo.key.nil? ? link = "https://source.unsplash.com/random/?" + @list.name.gsub(" ", "+") : link = cloudinary + @list.photo.key %>
     <% else %>
